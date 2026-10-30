@@ -1448,7 +1448,7 @@ function bwqHook(n,u){
     });
   };
 }
-function route(){const m=location.hash.match(/#\/unit\/(\d+)/);S=load();S.units=S.units||{};if(m&&+m[1]>=1&&+m[1]<=N)unit(+m[1]);else{document.title='English with Jose';index()}window.scrollTo(0,0)}
+function route(){const gm=location.hash.match(/#\/game\/(\d+)/);if(gm&&+gm[1]>=1&&+gm[1]<=N){location.replace('#/unit/'+gm[1]);setTimeout(()=>{const b=document.getElementById('lvlplay');if(b)b.click()},500);return}const m=location.hash.match(/#\/unit\/(\d+)/);S=load();S.units=S.units||{};if(m&&+m[1]>=1&&+m[1]<=N)unit(+m[1]);else{document.title='English with Jose';index()}window.scrollTo(0,0)}
 window.addEventListener('hashchange',route);route();
 })();
 </script></body></html>
